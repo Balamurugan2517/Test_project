@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewFlow - Review Management for Local Businesses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold">R</div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">ReviewFlow</span>
+                </div>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                    <a href="#features" class="hover:text-yellow-600 transition">Features</a>
+                    <a href="#how-it-works" class="hover:text-yellow-600 transition">How It Works</a>
+                    <a href="#pricing" class="hover:text-yellow-600 transition">Pricing</a>
+                    <a href="dashboard.html" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-medium transition shadow-lg shadow-yellow-500/30">Login</a>
+                </div>
+                <button class="md:hidden text-slate-600">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 sm:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block px-3 py-1 text-xs font-semibold bg-yellow-100 text-yellow-700 rounded-full mb-4">
+                Reputation Management for Local Businesses
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 mt-4 tracking-tight">
+                Stop <span class="text-yellow-600">chasing reviews.</span> <br>Start growing your business.
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
+                Collect Google, Yelp, and Facebook reviews in one dashboard. Reply from anywhere. Show your best reviews on your website with one embed code.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="dashboard.html" class="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl font-semibold text-lg transition-all shadow-xl shadow-yellow-500/25 flex items-center justify-center gap-2">
+                    Start Free Trial <span class="text-yellow-200">→</span>
+                </a>
+                <a href="#features" class="px-8 py-4 bg-white border border-slate-200 hover:border-slate-300 text-slate-700 rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2">
+                    See Demo
+                </a>
+            </div>
+            <div class="mt-12 flex justify-center gap-8 items-center text-xs text-slate-400">
+                <span class="flex items-center gap-1">⭐ 4.8/5 average rating</span>
+                <span class="flex items-center gap-1">📊 500+ businesses using</span>
+                <span class="flex items-center gap-1">⚡ Setup in 5 minutes</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Everything you need to manage your reputation</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">All your reviews. One dashboard. Simple English.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center text-2xl mb-4">📥</div>
+                    <h3 class="font-bold text-slate-900 mb-2">All Reviews in One Place</h3>
+                    <p class="text-slate-600 text-sm">Google, Yelp, and Facebook reviews collected automatically. No more logging into multiple accounts.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center text-2xl mb-4">💬</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Reply from Anywhere</h3>
+                    <p class="text-slate-600 text-sm">Respond to customer reviews directly from your dashboard. Happy customers = more business.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center text-2xl mb-4">🖼️</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Website Review Widget</h3>
+                    <p class="text-slate-600 text-sm">Embed your best reviews on your website with one line of code. Build trust instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">How it works</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Get started in three simple steps.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Connect Your Accounts</h3>
+                    <p class="text-slate-600 text-sm">Link your Google Business, Yelp, and Facebook pages in one click.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Manage Reviews</h3>
+                    <p class="text-slate-600 text-sm">Read and reply to all reviews from your ReviewFlow dashboard.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-slate-900 mb-2">Show on Website</h3>
+                    <p class="text-slate-600 text-sm">Copy-paste one embed code to display reviews on your site.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Simple, transparent pricing</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">No hidden fees. Cancel anytime.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Starter</h3>
+                    <div class="text-3xl font-bold text-slate-900 mb-4">$29<span class="text-sm font-normal text-slate-500">/month</span></div>
+                    <p class="text-slate-600 text-sm mb-6">For small local businesses getting started with review management.</p>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                        <li class="flex items-center gap-2">✅ One business location</li>
+                        <li class="flex items-center gap-2">✅ Google + Facebook reviews</li>
+                        <li class="flex items-center gap-2">✅ Basic reply dashboard</li>
+                        <li class="flex items-center gap-2">✅ Email support</li>
+                    </ul>
+                    <button class="w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition">Choose Starter</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl border-2 border-yellow-500 shadow-lg relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-white px-3 py-1 rounded-full text-xs font-bold">Most Popular</div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Growth</h3>
+                    <div class="text-3xl font-bold text-slate-900 mb-4">$69<span class="text-sm font-normal text-slate-500">/month</span></div>
+                    <p class="text-slate-600 text-sm mb-6">For growing businesses with multiple locations.</p>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                        <li class="flex items-center gap-2">✅ Up to 3 locations</li>
+                        <li class="flex items-center gap-2">✅ Google + Yelp + Facebook</li>
+                        <li class="flex items-center gap-2">✅ Advanced reply templates</li>
+                        <li class="flex items-center gap-2">✅ Review widget embed</li>
+                        <li class="flex items-center gap-2">✅ Priority email support</li>
+                    </ul>
+                    <button class="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg font-medium transition shadow-lg shadow-yellow-500/25">Choose Growth</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Enterprise</h3>
+                    <div class="text-3xl font-bold text-slate-900 mb-4">Custom<span class="text-sm font-normal text-slate-500">/month</span></div>
+                    <p class="text-slate-600 text-sm mb-6">For franchises and multi-location brands.</p>
+                    <ul class="space-y-3 text-sm text-slate-600 mb-8">
+                        <li class="flex items-center gap-2">✅ Unlimited locations</li>
+                        <li class="flex items-center gap-2">✅ All platforms</li>
+                        <li class="flex items-center gap-2">✅ Custom integrations</li>
+                        <li class="flex items-center gap-2">✅ Dedicated account manager</li>
+                    </ul>
+                    <button class="w-full py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-medium transition">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Ready to grow your reputation?</h2>
+            <p class="text-slate-600 mb-8 max-w-xl mx-auto">Join 500+ local businesses using ReviewFlow to manage their online reviews.</p>
+            <a href="dashboard.html" class="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl font-semibold text-lg transition-all shadow-xl shadow-yellow-500/25 flex items-center justify-center gap-2 inline-block">
+                Start Free 14-Day Trial <span class="text-yellow-200">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-900 text-slate-400 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold">R</div>
+                    <span class="font-bold text-white text-lg">ReviewFlow</span>
+                </div>
+                <p class="text-sm">© 2026 ReviewFlow. Built for local businesses.</p>
+                <div class="flex gap-4 text-sm">
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                    <a href="#" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

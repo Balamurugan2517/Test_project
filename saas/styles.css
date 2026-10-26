@@ -1,0 +1,49 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Utility overrides */
+.text-yellow-500 {
+    color: #eab308 !important;
+}
+.bg-yellow-500 {
+    background-color: #eab308 !important;
+}
+.hover\:bg-yellow-600:hover {
+    background-color: #ca8a04 !important;
+}
+.shadow-yellow-500\/25 {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.25) !important;
+}
+.bg-yellow-50 {
+    background-color: #fefce8 !important;
+}
+.text-yellow-600 {
+    color: #ca8a04 !important;
+}
+.bg-yellow-100 {
+    background-color: #fef3c7 !important;
+}
+.border-yellow-500 {
+    border-color: #eab308 !important;
+}

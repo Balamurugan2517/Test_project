@@ -1,0 +1,13 @@
+{
+  "name": "review-aggregator-saas",
+  "version": "1.0.0",
+  "description": "Simple review aggregator SaaS for local service businesses",
+  "main": "index.html",
+  "scripts": {
+    "dev": "echo 'Open index.html in browser or deploy to Vercel'",
+    "start": "echo 'Deploy to Vercel'"
+  },
+  "keywords": ["saas", "reviews", "aggregator", "local-business"],
+  "author": "Agency.OS",
+  "license": "MIT"
+}

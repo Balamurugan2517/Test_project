@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewFlow Dashboard - Manage Your Reviews</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold">R</div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">ReviewFlow</span>
+                </div>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+                    <a href="index.html" class="hover:text-yellow-600 transition">Home</a>
+                    <a href="#" class="text-yellow-600 font-medium">Dashboard</a>
+                    <a href="#" class="hover:text-yellow-600 transition">Settings</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span class="text-sm font-medium text-slate-700">Demo Account</span>
+                    <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white text-xs font-bold">JB</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Layout -->
+    <div class="flex-1 flex overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 bg-white border-r border-slate-200">
+            <div class="p-6 border-b border-slate-200">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold">R</div>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">ReviewFlow</span>
+                </div>
+                <div class="bg-slate-100 p-3 rounded-lg">
+                    <p class="text-xs font-medium text-slate-500 mb-1">Today's Rating</p>
+                    <p class="text-xl font-bold text-slate-900">4.8 <span class="text-yellow-500 text-xs">⭐</span></p>
+                </div>
+            </div>
+            <nav class="flex-1 p-4 space-y-1">
+                <a href="#" class="flex items-center gap-3 px-3 py-2 bg-yellow-50 text-yellow-600 rounded-lg font-medium transition">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-lg transition">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                    Reviews
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-lg transition">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Widget Code
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-lg transition">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h3l2 2 2-2 6 6M20 5h-3m-3 3l-2-2m-2 2l2 2m-3 16h3a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    Settings
+                </a>
+            </nav>
+            <div class="p-4 border-t border-slate-200">
+                <a href="index.html" class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-lg transition text-sm">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7v18" />
+                    </svg>
+                    View Your Website
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6 sm:p-8 lg:p-12 overflow-y-auto">
+            <!-- Header -->
+            <div class="mb-8 animate-fade-in">
+                <div class="flex justify-between items-start sm:items-center sm:flex-row gap-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-slate-900 mb-1">Welcome back, John!</h1>
+                        <p class="text-slate-600 text-sm">Here's what's happening with your reviews today.</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button class="px-4 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg font-medium transition flex items-center gap-2 text-sm">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                            Refresh
+                        </button>
+                        <button class="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg font-medium transition flex items-center gap-2 text-sm shadow-lg shadow-yellow-500/30">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                            New Reply
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 animate-fade-in" style="animation-delay: 0.1s;">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-sm font-medium text-slate-500 mb-1">Total Reviews</p>
+                    <p class="text-2xl font-bold text-slate-900">142</p>
+                    <p class="text-xs text-slate-400 mt-2">+12 this week</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-sm font-medium text-slate-500 mb-1">Average Rating</p>
+                    <p class="text-2xl font-bold text-slate-900">4.8 <span class="text-yellow-500">⭐</span></p>
+                    <p class="text-xs text-slate-400 mt-2">Up 0.3 from last month</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-sm font-medium text-slate-500 mb-1">Replies Sent</p>
+                    <p class="text-2xl font-bold text-slate-900">89</p>
+                    <p class="text-xs text-slate-400 mt-2">63% response rate</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <p class="text-sm font-medium text-slate-500 mb-1">New This Week</p>
+                    <p class="text-2xl font-bold text-slate-900">18</p>
+                    <p class="text-xs text-slate-400 mt-2">Needs your attention</p>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <h2 class="text-lg font-bold text-slate-900">Recent Reviews</h2>
+                        <p class="text-slate-600 text-sm">Manage and respond to customer feedback</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <select class="px-3 py-2 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                            <option>All Reviews</option>
+                            <option>Needs Reply</option>
+                            <option>5 Star</option>
+                            <option>4 Star</option>
+                            <option>3 Star & Below</option>
+                        </select>
+                        <button class="px-3 py-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 rounded-lg text-sm transition">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-4" id="reviews-list">
+                    <!-- Reviews will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Empty State (hidden by default) -->
+            <div id="empty-state" class="hidden text-center py-16">
+                <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl mx-auto mb-4">📭</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">No reviews to display</h3>
+                <p class="text-slate-600 text-sm max-w-xs mx-auto">All caught up! No new reviews need your attention.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Reply Modal -->
+    <div id="reply-modal" class="fixed inset-0 bg-black/50 z-50 hidden">
+        <div class="fixed inset-0 z-10 overflow-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-yellow-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <svg class="h-6 w-6 text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707a1 1 0 00-1.414-1.414l-4 4a1 1 0 001.414 1.414l.707-.707V13a1 1 0 011-1h6a1 1 0 011 1v3.586l.707-.707a1 1 0 001.414-1.414l-4-4a1 1 0 00-1.414-1.414L7.414 11.586V8a6 6 0 100-12z" />
+                                </svg>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-6 sm:flex-1">
+                                <h3 class="text-lg font-medium text-slate-900 mb-1">Reply to Review</h3>
+                                <div class="mt-2 text-sm text-slate-500">Sarah M. • 5 stars • Google</div>
+                                <div class="mt-4 bg-slate-50 p-3 rounded-lg text-sm text-slate-600">
+                                    "Best service in town! John was very professional and fixed my AC in under an hour. Highly recommend!"
+                                </div>
+                                <textarea id="reply-text" class="mt-4 block w-full rounded-lg border border-slate-200 p-3 text-sm text-slate-700 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 outline-none" rows="4" placeholder="Write your reply..."></textarea>
+                                <p class="mt-1 text-xs text-slate-400">Your reply will be posted publicly on Google.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-slate-100 text-slate-700 font-medium text-sm hover:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-300 sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                            Cancel
+                        </button>
+                        <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-500 text-white font-medium text-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300 sm:ml-3 sm:w-auto sm:text-sm" onclick="sendReply()">
+                            Send Reply
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock review data
+        const reviews = [
+            {
+                id: 1,
+                name: "Sarah M.",
+                rating: 5,
+                platform: "Google",
+                date: "2 hours ago",
+                text: "Best service in town! John was very professional and fixed my AC in under an hour. Highly recommend!",
+                replied: false,
+                avatar: "SM"
+            },
+            {
+                id: 2,
+                name: "Mike T.",
+                rating: 4,
+                platform: "Yelp",
+                date: "5 hours ago",
+                text: "Great work on my kitchen remodel. The team was on time and cleaned up after themselves.",
+                replied: true,
+                avatar: "MT"
+            },
+            {
+                id: 3,
+                name: "Lisa K.",
+                rating: 5,
+                platform: "Facebook",
+                date: "1 day ago",
+                text: "Called for an emergency leak and they came same day. Fixed it quickly and charged a fair price.",
+                replied: false,
+                avatar: "LK"
+            },
+            {
+                id: 4,
+                name: "David R.",
+                rating: 3,
+                platform: "Google",
+                date: "2 days ago",
+                text: "Service was okay but took longer than expected. Price was reasonable though.",
+                replied: false,
+                avatar: "DR"
+            },
+            {
+                id: 5,
+                name: "Emma W.",
+                rating: 5,
+                platform: "Yelp",
+                date: "3 days ago",
+                text: "Amazing experience from start to finish. Would definitely use again!",
+                replied: true,
+                avatar: "EW"
+            }
+        ];
+
+        const reviewsList = document.getElementById('reviews-list');
+        const emptyState = document.getElementById('empty-state');
+        const replyModal = document.getElementById('reply-modal');
+
+        function renderReviews() {
+            reviewsList.innerHTML = '';
+            
+            if (reviews.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            
+            emptyState.classList.add('hidden');
+            
+            reviews.forEach(review => {
+                const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+                const repliedBadge = review.replied 
+                    ? '<span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded-full">Replied</span>' 
+                    : '<span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-2 py-1 rounded-full">Needs Reply</span>';
+                
+                const card = document.createElement('div');
+                card.className = 'bg-white p-5 rounded-xl border border-slate-200 shadow-sm animate-fade-in';
+                card.style.animationDelay = `${review.id * 0.1}s`;
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-slate-200 rounded-full flex items-center justify-center text-slate-600 font-medium text-xs">${review.avatar}</div>
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <span class="font-semibold text-slate-900 text-sm">${review.name}</span>
+                                    <span class="text-xs text-slate-500">${review.platform}</span>
+                                </div>
+                                <div class="flex items-center gap-0.5 text-yellow-500 text-xs">${stars}</div>
+                            </div>
+                            ${repliedBadge}
+                        </div>
+                        <span class="text-xs text-slate-400">${review.date}</span>
+                    </div>
+                    <p class="text-slate-700 text-sm mb-4">${review.text}</p>
+                    <button onclick="openReplyModal(${review.id})" class="${review.replied ? 'bg-slate-100 text-slate-600' : 'bg-yellow-500 text-white'} hover:${review.replied ? 'bg-slate-200' : 'bg-yellow-600'} text-xs font-medium px-3 py-1.5 rounded-md transition">
+                        ${review.replied ? 'Edit Reply' : 'Reply'}
+                    </button>
+                `;
+                
+                reviewsList.appendChild(card);
+            });
+        }
+
+        function openReplyModal(reviewId) {
+            const review = reviews.find(r => r.id === reviewId);
+            if (!review) return;
+            
+            document.querySelector('#reply-modal .text-sm.text-slate-500').textContent = `${review.name} • ${review.rating} stars • ${review.platform}`;
+            document.querySelector('#reply-modal .bg-slate-50').textContent = `"${review.text}"`;
+            document.getElementById('reply-text').value = review.replied ? 'Thank you for your feedback!' : '';
+            document.getElementById('reply-text').dataset.reviewId = reviewId;
+            
+            replyModal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            replyModal.classList.add('hidden');
+        }
+
+        function sendReply() {
+            const textarea = document.getElementById('reply-text');
+            const reviewId = parseInt(textarea.dataset.reviewId);
+            const replyText = textarea.value.trim();
+            
+            if (!replyText) {
+                alert('Please write a reply first.');
+                return;
+            }
+            
+            const review = reviews.find(r => r.id === reviewId);
+            if (review) {
+                review.replied = true;
+                renderReviews();
+            }
+            
+            closeModal();
+            textarea.value = '';
+        }
+
+        // Close modal on outside click
+        replyModal.addEventListener('click', (e) => {
+            if (e.target === replyModal) closeModal();
+        });
+
+        // Initialize
+        renderReviews();
+    </script>
+</body>
+</html>
