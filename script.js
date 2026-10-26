@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const bubbleDiv = document.createElement('div');
         if (sender === 'user') {
-            bubbleDiv.className = 'bg-indigo-600 text-white rounded-xl rounded-tl-none px-3 py-2 text-sm max-w-xs border border-indigo-500/50';
+            bubbleDiv.className = 'bg-yellow-500 text-slate-900 rounded-xl rounded-tl-none px-3 py-2 text-sm max-w-xs border border-yellow-400/50';
         } else {
             bubbleDiv.className = 'bg-slate-800 text-slate-100 rounded-xl rounded-tr-none px-3 py-2 text-sm max-w-xs border border-slate-700';
         }
